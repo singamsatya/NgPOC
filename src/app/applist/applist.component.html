@@ -1,0 +1,74 @@
+<div class="appList">
+	<div *ngIf="parentValue == 'mobiles'" class="tblCon">
+		<div class="tblRow">
+			<div class="tblCell bold">
+				Name
+			</div>
+			<div class="tblCell bold">
+				Price
+			</div>
+			<div class="tblCell bold">
+				Qty
+			</div>
+			<div class="tblCell"></div>
+			<div class="tblCell"></div>
+		</div>
+		<div class="tblRow">
+			<div class="tblCell">
+				Iphone X
+			</div>
+			<div class="tblCell">
+				Rs 80,000
+			</div>
+			<div class="tblCell">
+				<input type="text" size="4" />
+			</div>
+			<div class="tblCell">
+				<a href="javascript:;" (click)="addToCart($event)">
+					Add to cart
+				</a>
+			</div>
+			<div class="tblCell">
+				<a href="javascript:;" (click)="removeFromCart($event)">
+					Remove from cart
+				</a>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="parentValue == 'kids'" class="tblCon">
+		<div class="tblRow">
+			<div class="tblCell bold">
+				Name
+			</div>
+			<div class="tblCell bold">
+				Price
+			</div>
+			<div class="tblCell bold">
+				Qty
+			</div>
+			<div class="tblCell"></div>
+			<div class="tblCell"></div>
+		</div>
+		<div class="tblRow">
+			<div class="tblCell">
+				Tshirt
+			</div>
+			<div class="tblCell">
+				Rs 1,000
+			</div>
+			<div class="tblCell">
+				<input type="text" size="4" />
+			</div>
+			<div class="tblCell">
+				<a href="javascript:;" (click)="addToCart($event)">
+					Add to cart
+				</a>
+			</div>
+			<div class="tblCell">
+				<a href="javascript:;" (click)="removeFromCart($event)">
+					Remove from cart
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

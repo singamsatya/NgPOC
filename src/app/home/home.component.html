@@ -1,0 +1,43 @@
+<div class="home-wrapper container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<h2>Welcome {{ username | uppercase }}</h2>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 40px;">
+		<div class="col-sm-12 clearfix">
+			<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+			  <ngb-panel>
+			  	<ng-template ngbPanelTitle>
+			      <span [ngClass]="changeRowColor ? 'grey' : ''">&#9733; <b>Electronics</b> &#9733;</span>
+			    </ng-template>
+			    <ng-template ngbPanelContent>
+			      	<ul>
+			      		<li><a routerLink="/home/mobiles" (click)="parentId = 'mobiles'" >Mobiles</a></li>
+			      	</ul>
+			    </ng-template>
+			  </ngb-panel>
+			  <ngb-panel>
+			    <ng-template ngbPanelTitle>
+			      <span [ngClass]="changeRowColor ? 'grey' : ''">&#9733; <b>Clothing</b> &#9733;</span>
+			    </ng-template>
+			    <ng-template ngbPanelContent>
+			    	<ul>
+			    		<li><a routerLink="/home/kids" (click)="parentId = 'kids'" >Kids Clothing</a></li>
+			    	</ul>
+			    </ng-template>
+			  </ngb-panel>
+			</ngb-accordion>
+		</div>
+	</div>
+	<div class="row" *ngIf="itemsAdded != 0" style="margin-top: 40px;">
+		<div class="col-sm-12">
+			<strong>{{ itemsAdded }}</strong> items added to the Cart Successfully.
+		</div>
+	</div>
+	<div class="row" style="margin-top: 40px;">
+		<div class="col-sm-12 clearfix">
+			<app-applist [parentValue]="parentId" (changeColor)="changeItemColor($event)"></app-applist>
+		</div>
+	</div>
+</div>

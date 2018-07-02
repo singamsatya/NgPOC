@@ -1,0 +1,21 @@
+.appList {
+	.tblCon {
+		display: table;
+		width: 100%;
+
+		.tblRow {
+			display: table-row;
+
+			.tblCell {
+				display: table-cell;
+				width: 20%;
+				border: 1px solid;
+				padding: 20px;	
+
+				&.bold {
+					font-weight: bold !important;
+				}
+			}
+		}
+	}
+}
