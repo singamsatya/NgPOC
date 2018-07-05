@@ -1,0 +1,17 @@
+<header class="header-wrapper container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="col-sm-3">
+				<h1>Shopping Cart</h1>
+			</div>
+			<div class="col-sm-9"></div>
+		</div>
+	</div>
+	<nav class="nav nav-bar" *ngIf="isLoggedIn|async">
+		<ul class="pull-left">
+			<li *ngFor="let tab of tabs">
+				<a routerLink="{{ tab.url }}">{{ tab.name }}</a>
+			</li>
+		</ul>
+	</nav>
+</header>

@@ -1,0 +1,45 @@
+.app-forms {
+	.row {
+		margin-bottom: 20px;
+
+		.pdLt15 {
+			padding-left: 15px !important;
+		}
+		.pdLt30 {
+			padding-left: 30px !important;
+		}
+		.form-control-feedback {
+			position: relative;
+			width: auto;
+			text-align: left;
+			margin-top: 10px;
+			.glyphicon.glyphicon-ok {
+				color: #28a745;
+				font-size: 15px;
+			}
+		}
+		.separator {
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		.errMsg {
+			color: #dc3545;
+		}
+		.successMsg {
+			color: #28a745;
+		}
+		&.btnsGrp {
+			input {
+				padding: 5px 10px;
+				margin-right: 10px;
+				border-radius: 5px;
+				border: 0;		
+
+				&.btn-submit {
+					background: #2E4053;
+					color: #FFFFFF;
+				}
+			}
+		}
+	}
+}

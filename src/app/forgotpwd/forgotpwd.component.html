@@ -1,0 +1,53 @@
+<div class="forgotpwd-wrapper container-fluid">
+	<form id="fgpwdForm" class="app-forms" (submit)="fgpwdFrmSubmit($event)" (reset)="fgpwdFrmReset($event)" [formGroup]="fgpwdForm">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="pdLt15">Forgot Password</h1>
+			</div>
+		</div>
+		<div class="row" *ngIf="forgotpwdErrMsg">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-11 pdLt30 errMsg">
+				Please enter a Registered Username
+			</div>
+		</div>
+		<div class="row" *ngIf="forgotpwdSuccessMsg">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-11 pdLt30 successMsg">
+				Check your Email to reset the password.
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 form-group">
+				<div class="col-sm-1">
+					<h5>Username</h5>
+				</div>
+				<div class="col-sm-3">{{loginUser}}
+					<input type="text" formControlName="username" name="username" class="form-control" #usernameFld />
+				</div>
+				<div class="form-control-feedback col-sm-8 errMsg" *ngIf="fgpwdForm.controls.username.errors && (fgpwdForm.controls.username.dirty || fgpwdForm.controls.username.touched)"> 
+				    Username is required
+				</div>
+			</div>
+		</div>
+		<div class="row btnsGrp">
+			<div class="col-sm-12">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-11">
+					<input type="submit" value="Submit" class="btn" [ngClass]="{'disabled': disabled, 'btn-submit' : !disabled}" [disabled]="!fgpwdForm.valid || submitBtn" />
+					<input type="reset" value="Reset" class="btn" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-11">
+					<a routerLink="/register">Register User</a>
+					<span class="separator">|</span>
+					<a routerLink="/login">Login</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

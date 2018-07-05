@@ -1,0 +1,72 @@
+<div class="register-wrapper container-fluid">
+	<form id="registerForm" class="app-forms" (submit)="registerFrmSubmit($event)" (reset)="registerFrmReset($event)" [formGroup]="registerForm">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="pdLt15">Register</h1>
+			</div>
+		</div>
+		<div class="row" *ngIf="regSuccessMsg">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-11 has-success pdLt30 successMsg">
+				Registered Successfully!!
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 form-group">
+				<div class="col-sm-1">
+					<h5>Username</h5>
+				</div>
+				<div class="col-sm-3">
+					<input type="text" formControlName="username" name="username" class="form-control" #usernameFld />
+				</div>
+				<div class="form-control-feedback col-sm-8 errMsg" *ngIf="registerForm.controls.username.errors && (registerForm.controls.username.dirty || registerForm.controls.username.touched)"> 
+				    Username is required
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 form-group">
+				<div class="col-sm-1">
+					<h5>Password</h5>
+				</div>
+				<div class="col-sm-3">
+					<input type="password" formControlName="password" name="password" class="form-control" />
+				</div>
+				<div class="form-control-feedback col-sm-8 errMsg" *ngIf="registerForm.controls.password.errors && (registerForm.controls.password.dirty || registerForm.controls.password.touched)"> 
+				    Password is required and must have atleast 8 characters
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 form-group">
+				<div class="col-sm-1">
+					<h5>Email</h5>
+				</div>
+				<div class="col-sm-3">
+					<input type="text" formControlName="email" name="email" class="form-control" />
+				</div>
+				<div class="form-control-feedback col-sm-8 errMsg" *ngIf="registerForm.controls.email.errors && (registerForm.controls.email.dirty || registerForm.controls.email.touched)"> 
+				    <p *ngIf="registerForm.controls.email.errors.required">Email is required</p>
+				    <p *ngIf="registerForm.controls.email.errors.invalidEmailAddress">Invalid Email</p>
+				</div>
+			</div>
+		</div>
+		<div class="row btnsGrp">
+			<div class="col-sm-12">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-11">
+					<input type="submit" value="Submit" class="btn" [ngClass]="{'disabled': disabled, 'btn-submit' : !disabled}" [disabled]="!registerForm.valid || submitBtn" />
+					<input type="reset" value="Reset" class="btn" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-11">
+					<a routerLink="/login">Login</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
